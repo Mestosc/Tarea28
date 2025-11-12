@@ -14,9 +14,9 @@ public class Servidor {
         try (ServerSocket server = new ServerSocket()) {
             server.bind(dir);
             System.out.println("Esperando conexion");
-            System.out.println("Conexion realizada");
             while (true) {
                 Socket cliente = server.accept();
+                System.out.println("Conexion realizada");
                 GestorClientes clientes = new GestorClientes(cliente);
                 clientes.start();
         }
